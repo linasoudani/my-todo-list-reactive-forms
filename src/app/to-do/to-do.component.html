@@ -1,0 +1,47 @@
+
+   <!--Division for taking input from user -->
+
+   <form [formGroup]="TodoForm" (ngSubmit)="addToList()" >
+   <div class="row mt-1" style="height:80px;">
+    <div class="col-3 d-none col-md-3 d-md-block"></div>
+    <div class="col-12 col-md-6 bg-danger d-flex 
+                justify-content-center align-items-center 
+                text-light h3">
+     
+        <input id="name" type="text" formControlName="task" placeholder="to-do-list"
+                value="" class="col-7 form-control"
+                    style="width:300px;" >
+      
+        <div class="col-1"></div>
+
+       <button type="submit" 
+            class="btn btn-light text-success">
+            ADD TASK
+        </button>
+    
+  
+    </div>
+     
+    <div class="col-3 d-none col-md-3 d-md-block"></div>
+</div>
+</form>
+ <!--Tasks added repeated divisions-->
+ <div *ngFor="let task of list, index as i" 
+ class="row mt-1" style="height:100px;">
+
+<div class="col-3 d-none col-md-3 d-md-block"></div>
+
+<div class="col-12 col-md-6 bg-success d-flex
+         justify-content-center align-items-center
+         text-light h3">
+
+ <div class="col-9 text-light  h3">{{task.task}}</div>
+
+  <button (click)="deleteTask(i)" class="col-2 btn  btn-danger" >delete</button>
+</div>
+
+
+
+<div class="col-3 d-none col-md-3 d-md-block"></div>
+  
+    
